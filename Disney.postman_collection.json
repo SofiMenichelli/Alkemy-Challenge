@@ -1,0 +1,337 @@
+{
+	"info": {
+		"_postman_id": "f00f7eeb-266d-4b70-a26b-842c605fe925",
+		"name": "Disney",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "Buscar Peliculas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/movies",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"movies"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar Pelicula",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"imageMovie\": \"assets/hola\",\r\n    \"tittleMovie\": \"Mi Pobre Angelito\",\r\n    \"calification\": 2,\r\n    \"gender\" : {\r\n        \"nameGender\":  \"hoal\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/addMovie",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"addMovie"
+							],
+							"query": [
+								{
+									"key": "image",
+									"value": "assets/miPeqAng",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "Mi Pequeño Angelito",
+									"disabled": true
+								},
+								{
+									"key": "calification",
+									"value": "5",
+									"disabled": true
+								},
+								{
+									"key": "gender",
+									"value": "musical",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Pelicula",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/editMovie?id=1&image=assets/hola&calification=2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"editMovie"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								},
+								{
+									"key": "image",
+									"value": "assets/hola"
+								},
+								{
+									"key": "calification",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar Pelicula",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/deleteMovie?id=1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"deleteMovie"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Characters",
+			"item": [
+				{
+					"name": "Buscar Por Id",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/character/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"character",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Agregar Personaje",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/addCharacter?image=/assets/minnie&name=sofia&age=30&history=lalalallala",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"addCharacter"
+							],
+							"query": [
+								{
+									"key": "image",
+									"value": "/assets/minnie"
+								},
+								{
+									"key": "name",
+									"value": "sofia"
+								},
+								{
+									"key": "age",
+									"value": "30"
+								},
+								{
+									"key": "history",
+									"value": "lalalallala"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Personaje por Nombre",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/characName/Minnie",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"characName",
+								"Minnie"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Personaje Por Edad",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/characAge/60",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"characAge",
+								"60"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar peliculas por id de personaje",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/characMovies/3",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"characMovies",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Editar Personaje",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/editCharacter?id=2&image=/assets/donald2&age=300&history=Mejor amigo de Mickey Mouse",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"editCharacter"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								},
+								{
+									"key": "image",
+									"value": "/assets/donald2"
+								},
+								{
+									"key": "age",
+									"value": "300"
+								},
+								{
+									"key": "history",
+									"value": "Mejor amigo de Mickey Mouse"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Borrar personaje (SI NO TIENE RELACION)",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/deleteCharacter?id=2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"deleteCharacter"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
